@@ -1,5 +1,7 @@
 # module_26_assignment
 
+Assignment Presentation : https://drive.google.com/file/d/1LOzueKLK4xfsNYjkrEqcPxfOojpSGpFr/view?usp=drive_link
+
 The goal of this assignment is to build a Car Rental Web Application using Laravel. This Car Rental Web Application allows users to browse available cars, select a car, and book it for a specified rental period. The system ensures that cars are available for the chosen dates before confirming the booking. It includes role-based access control, where administrators can manage cars and rentals, while customers can view their bookings.
 
 This project will have two main interfaces:
