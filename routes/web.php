@@ -26,8 +26,10 @@ Route::get('/', action: [HomeController::class, 'HomePage'])->middleware([CheckU
 
 Route::get('/login', action: [UserController::class, 'LoginPage'])->middleware([CheckUserRole::class]);
 
-Route::get('/about', action: [HomeController::class, 'AboutPage'])->middleware([CheckUserRole::class]);
-Route::get('/service', action: [HomeController::class, 'ServicePage'])->middleware([CheckUserRole::class]);
+Route::get('/about', action: [PageController::class, 'AboutPage'])->middleware([CheckUserRole::class]);
+Route::get('/service', action: [PageController::class, 'ServicePage'])->middleware([CheckUserRole::class]);
+Route::get(uri: '/contact', action: [PageController::class, 'contactPage'])->middleware([CheckUserRole::class]);
+
 
 Route::get('/admin/dashboard', action: [HomeController::class, 'AdminDashPage'])->middleware([CheckAdminRole_AuthMiddleware::class]);
 Route::get('/admin/carPage', action: [HomeController::class, 'AdminCarPage'])->middleware([CheckAdminRole_AuthMiddleware::class]);

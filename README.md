@@ -1,66 +1,223 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# module_26_assignment
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+The goal of this assignment is to build a Car Rental Web Application using Laravel. This Car Rental Web Application allows users to browse available cars, select a car, and book it for a specified rental period. The system ensures that cars are available for the chosen dates before confirming the booking. It includes role-based access control, where administrators can manage cars and rentals, while customers can view their bookings.
 
-## About Laravel
+This project will have two main interfaces:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Admin Dashboard - for managing cars, rentals, and customers.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Frontend - for users to browse available cars, make bookings, and view rental history.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Requirements:
 
-## Learning Laravel
+Part 1: Admin Dashboard
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+The Admin should be able to perform the following tasks:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Manage Cars:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Add, edit, and delete car details. Each car should have the following properties:
 
-## Laravel Sponsors
+Car Name
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Brand
 
-### Premium Partners
+Model
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Year of Manufacture
 
-## Contributing
+Car Type (SUV, Sedan, etc.)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Daily Rent Price
 
-## Code of Conduct
+Availability Status (Available/Not Available)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Car Image
 
-## Security Vulnerabilities
+Manage Rentals:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+View and manage (CRUD) all car rentals, including:
 
-## License
+Rental ID
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Customer Name
+
+Car Details (Name, Brand)
+
+Rental Start Date and End Date
+
+Total Cost
+
+Status (Ongoing, Completed, Canceled)
+
+Manage Customers:
+
+View and manage (CRUD) customer details:
+
+Customer Name
+
+Email
+
+Phone Number
+
+Address
+
+Rental History
+
+Dashboard Overview:
+
+Show important statistics like:
+
+Total number of cars
+
+Number of available cars
+
+Total number of rentals
+
+Total earnings from rentals
+
+Part 2: Frontend (User Interface) (Home, About, Rentals, Contact, Login/Singup)
+
+Users should be able to:
+
+Browse Cars:
+
+View available cars with filters such as car type, brand, and daily rent price.
+
+Make a Booking:
+
+Select a car, choose the rental start and end date, and book the car.
+
+Ensure that the selected car is available for the chosen period.
+
+Manage Bookings:
+
+After logging in, users should be able to:
+
+View their current and past bookings.
+
+Cancel a booking (only if the rental has not started yet).
+
+User Authentication:
+
+Implement a basic authentication system for users.
+
+Allow users to sign up, log in, and log out.
+
+Use middleware to protect routes (e.g., only logged-in users can book cars or view their booking history).
+
+Part 3: Technical Requirements (Do not rename any of the given elements)
+
+Database Design:
+
+Design the database schema for the car rental system, including tables for:
+
+Users (admin, customers)
+
+Cars
+
+Rentals
+
+Email System:
+
+When a car is rented, a detail of that rental should be sent to the customer's email and also sent an email to the admin that a car is rented by which customer.
+
+Here we are not implementing any payment system. It is now on By Cash mode.
+
+Tables and Their Columns:
+
+users Table:
+
+id (BIGINT)
+
+name (STRING)
+
+email (STRING)
+
+password (STRING)
+
+role (STRING) [admin/customer]
+
+created_at (TIMESTAMP)
+
+updated_at (TIMESTAMP)
+
+cars Table:
+
+id (BIGINT)
+
+name (STRING)
+
+brand (STRING)
+
+model (STRING)
+
+year (INTEGER)
+
+car_type (STRING)
+
+daily_rent_price (DECIMAL)
+
+availability (BOOLEAN)
+
+image (STRING)
+
+created_at (TIMESTAMP)
+
+updated_at (TIMESTAMP)
+
+rentals Table:
+
+id (BIGINT)
+
+user_id (BIGINT)
+
+car_id (BIGINT)
+
+start_date (DATE)
+
+end_date (DATE)
+
+total_cost (DECIMAL)
+
+created_at (TIMESTAMP)
+
+updated_at (TIMESTAMP)
+
+Controllers:
+
+Admin Controllers:
+
+CarController (Admin/CarController.php)
+
+RentalController (Admin/RentalController.php)
+
+CustomerController (Admin/CustomerController.php)
+
+Frontend Controllers:
+
+PageController (Frontend/PageController.php)
+
+CarController (Frontend/CarController.php)
+
+RentalController (Frontend/RentalController.php)
+
+Models:
+
+User (User.php):
+
+isAdmin(): A method to check if the user is an admin.
+
+isCustomer(): A method to check if the user is a customer.
+
+rentals(): Defines a hasMany relationship with the Rental model, indicating that a user can have multiple rentals.
+
+Car (Car.php):
+
+rentals(): Defines a hasMany relationship with the Rental model, indicating that a car can have multiple rentals.
+
+Rental (Rental.php):
+
+car(): Defines a belongsTo relationship with the Car model, indicating that a rental is associated with one car.
+
+user(): Defines a belongsTo relationship with the User model, indicating that a rental is associated with one user

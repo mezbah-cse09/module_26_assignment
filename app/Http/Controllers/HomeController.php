@@ -11,16 +11,6 @@ class HomeController extends Controller
     {
         return view('pages.user.home-page');
     }
-    function AboutPage()
-    {
-        $title = "About US";
-        return view('pages.user.about-page', compact(['title']));
-    }
-    function ServicePage()
-    {
-        $title = "Services";
-        return view('pages.user.service-page', compact(['title']));
-    }
     function AdminDashPage()
     {
         return view('pages.admin.home-page');

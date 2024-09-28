@@ -12,6 +12,7 @@
                 <li class="nav-item"><a href="{{ url('/about') }}" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="{{ url('/service') }}" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="{{ url('/car') }}" class="nav-link">Cars</a></li>
+                <li class="nav-item"><a href="{{ url('/contact') }}" class="nav-link">Contact</a></li>
                 @if (Cookie::get('token') !== null)
                     <li class="nav-item"><a href="{{ url('/my-booking') }}"
                             class="nav-link > <i class="linearicons-user"></i> My Bookings</a></li>
