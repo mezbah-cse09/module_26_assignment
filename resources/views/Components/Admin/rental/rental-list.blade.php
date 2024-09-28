@@ -100,6 +100,7 @@
             $('.editBtn').on('click', async function() {
                 rentIndex = ($(this).attr('id'));
                 updateView(res.data[rentIndex])
+                // console.log(res.data[rentIndex])
                 $("#update-modal").modal('show');
             })
 

@@ -152,7 +152,9 @@
         document.getElementById('statusUpdate').value = item['status']
         document.getElementById('updateID').value = item['id']
 
-        if ((item['status'] === 'Processing') || (item['status'] === 'Started')) {} else {
+        if ((item['status'] === 'Processing') || (item['status'] === 'Started')) {
+            document.getElementById('update-btn').disabled = false
+        } else {
             document.getElementById('update-btn').disabled = true
         }
     }
