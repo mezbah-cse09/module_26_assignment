@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CarController;
 use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\RentalController as AdminRentalController;
 use App\Http\Controllers\Frontend\CarController as FrontendCarController;
 use App\Http\Controllers\Frontend\PageController;
@@ -14,6 +15,7 @@ use App\Http\Middleware\CheckCustomerRole_AuthMiddleware;
 use App\Http\Middleware\CheckUserRole;
 use App\Http\Middleware\CustomerAPI_Auth;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -66,6 +68,7 @@ Route::middleware([AdminAPI_Auth::class])->group(function () {
     Route::post('/admin/rental/delete-rental', [AdminRentalController::class, 'RentalDelete']);
     Route::post('/admin/rental/create-rental', [AdminRentalController::class, 'RentalCreate']);
     Route::get('/admin/rental/rental-by-id', [AdminRentalController::class, 'RentalById']);
+    Route::get('/admin/dashboard-detail', [DashboardController::class, 'DashboardDetail']);
 });
 
 
